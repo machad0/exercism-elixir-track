@@ -17,6 +17,11 @@ defmodule RNATranscription do
     }
 
     dna 
-    |> Enum.map(&(rna_transcription[&1]))
+    |> Enum.map(fn
+      ?G -> ?C
+      ?C -> ?G
+      ?T -> ?A 
+      ?A -> ?U 
+    end)
   end
 end
