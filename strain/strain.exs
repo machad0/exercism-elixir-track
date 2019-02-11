@@ -11,8 +11,6 @@ defmodule Strain do
     for n <- list, fun.(n), do: n
   end
 
-  def keep([], _), do: []
-
   @doc """
   Given a `list` of items and a function `fun`, return the list of items where
   `fun` returns false.
@@ -23,7 +21,5 @@ defmodule Strain do
   def discard(list, fun) do
     for n <- list, not fun.(n), do: n
   end
-
-  def discard([], _), do: []
 
 end
